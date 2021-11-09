@@ -37,6 +37,8 @@ namespace SQSExplorer
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btReceiveLastMessageSelectedQueue = new System.Windows.Forms.Button();
             this.lblQueueSelected = new System.Windows.Forms.Label();
+            this.lblReceivedLastMessageId = new System.Windows.Forms.Label();
+            this.btDeleteLastMessage = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +60,7 @@ namespace SQSExplorer
             this.btSendMessage.Name = "btSendMessage";
             this.btSendMessage.Size = new System.Drawing.Size(126, 23);
             this.btSendMessage.TabIndex = 3;
-            this.btSendMessage.Text = "SEND MESSAGE";
+            this.btSendMessage.Text = "Send message";
             this.btSendMessage.UseVisualStyleBackColor = true;
             this.btSendMessage.Click += new System.EventHandler(this.btSendMessages_Click);
             // 
@@ -87,37 +89,61 @@ namespace SQSExplorer
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.Window;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Location = new System.Drawing.Point(24, 109);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(739, 393);
+            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBox1.Size = new System.Drawing.Size(905, 393);
             this.textBox1.TabIndex = 6;
             // 
             // btReceiveLastMessageSelectedQueue
             // 
             this.btReceiveLastMessageSelectedQueue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btReceiveLastMessageSelectedQueue.Location = new System.Drawing.Point(604, 522);
+            this.btReceiveLastMessageSelectedQueue.Location = new System.Drawing.Point(156, 522);
             this.btReceiveLastMessageSelectedQueue.Name = "btReceiveLastMessageSelectedQueue";
             this.btReceiveLastMessageSelectedQueue.Size = new System.Drawing.Size(159, 23);
             this.btReceiveLastMessageSelectedQueue.TabIndex = 7;
-            this.btReceiveLastMessageSelectedQueue.Text = "RECEIVE LAST MESSAGE";
+            this.btReceiveLastMessageSelectedQueue.Text = "Receive Last Message";
             this.btReceiveLastMessageSelectedQueue.UseVisualStyleBackColor = true;
             this.btReceiveLastMessageSelectedQueue.Click += new System.EventHandler(this.btReceiveLastMessageSelectedQueue_Click);
             // 
             // lblQueueSelected
             // 
             this.lblQueueSelected.AutoSize = true;
-            this.lblQueueSelected.Location = new System.Drawing.Point(255, 76);
+            this.lblQueueSelected.Location = new System.Drawing.Point(366, 76);
             this.lblQueueSelected.Name = "lblQueueSelected";
             this.lblQueueSelected.Size = new System.Drawing.Size(88, 15);
             this.lblQueueSelected.TabIndex = 8;
             this.lblQueueSelected.Text = "Queue selected";
             // 
+            // lblReceivedLastMessageId
+            // 
+            this.lblReceivedLastMessageId.AutoSize = true;
+            this.lblReceivedLastMessageId.Location = new System.Drawing.Point(646, 76);
+            this.lblReceivedLastMessageId.Name = "lblReceivedLastMessageId";
+            this.lblReceivedLastMessageId.Size = new System.Drawing.Size(130, 15);
+            this.lblReceivedLastMessageId.TabIndex = 9;
+            this.lblReceivedLastMessageId.Text = "Receive last id message";
+            // 
+            // btDeleteLastMessage
+            // 
+            this.btDeleteLastMessage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btDeleteLastMessage.Location = new System.Drawing.Point(789, 522);
+            this.btDeleteLastMessage.Name = "btDeleteLastMessage";
+            this.btDeleteLastMessage.Size = new System.Drawing.Size(127, 23);
+            this.btDeleteLastMessage.TabIndex = 10;
+            this.btDeleteLastMessage.Text = "Delete last message";
+            this.btDeleteLastMessage.UseVisualStyleBackColor = true;
+            this.btDeleteLastMessage.Click += new System.EventHandler(this.btDeleteLastMessage_Click);
+            // 
             // MessageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 561);
+            this.ClientSize = new System.Drawing.Size(958, 561);
+            this.Controls.Add(this.btDeleteLastMessage);
+            this.Controls.Add(this.lblReceivedLastMessageId);
             this.Controls.Add(this.lblQueueSelected);
             this.Controls.Add(this.btReceiveLastMessageSelectedQueue);
             this.Controls.Add(this.textBox1);
@@ -144,6 +170,8 @@ namespace SQSExplorer
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btReceiveLastMessageSelectedQueue;
         private System.Windows.Forms.Label lblQueueSelected;
+        private System.Windows.Forms.Label lblReceivedLastMessageId;
+        private System.Windows.Forms.Button btDeleteLastMessage;
     }
 }
 

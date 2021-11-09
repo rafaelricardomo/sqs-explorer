@@ -16,6 +16,7 @@ namespace SQSExplorer
         private readonly IMessageService _messageService;
 
         private static Core.Entidades.Queue _queueSelected;
+
         private static Core.Entidades.Queue getQueueSelected()
         {
             return _queueSelected;
@@ -25,6 +26,8 @@ namespace SQSExplorer
         {
             _queueSelected = queue;            
         }
+
+        private Core.Entidades.Message LastMessage { get; set; }
 
         public MessageForm(IMessageService messageService)
         {
@@ -50,9 +53,9 @@ namespace SQSExplorer
 
             var sentMessage =  await _messageService.SendMessage(messageText, queueSelected.Name);
             if (sentMessage)
-                MessageBox.Show("Message Ok.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Mensagem enviada.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
-                MessageBox.Show("Message fail.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Mensagem com falha no envio.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private async Task receiveMessage()
@@ -67,18 +70,40 @@ namespace SQSExplorer
                 reset();
                 return;
             }
-            
+
+            LastMessage = message;
+
+            lblReceivedLastMessageId.Text = message.Id;
             textBox1.Text = message.Content;
+        }
+
+        private async Task deleteMessage()
+        {
+            var queueSelected = getQueueSelected();
+            if (queueSelected == null) return;
+
+            if (LastMessage == null) return;
+
+            var deletedMessage = await _messageService.DeleteMessage(LastMessage.QueueIdentifier, queueSelected.Name);
+            if (deletedMessage)
+                MessageBox.Show("Mensagem deletada Ok.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                MessageBox.Show("Mensagem com falha na exclusão.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            
         }
 
         private void reset()
         {
+            LastMessage = null;
             textBox1.Text = string.Empty;
+            lblReceivedLastMessageId.Text = string.Empty;
         }
 
         private void btSendMessages_Click(object sender, EventArgs e)
         {
             sendMessages();
+            reset();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -99,6 +124,12 @@ namespace SQSExplorer
         private void MessageForm_Load(object sender, EventArgs e)
         {
             loadQueueSelected();
+            reset();
+        }
+
+        private void btDeleteLastMessage_Click(object sender, EventArgs e)
+        {
+            deleteMessage();
             reset();
         }
     }

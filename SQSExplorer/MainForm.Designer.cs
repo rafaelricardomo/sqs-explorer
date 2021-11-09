@@ -59,7 +59,7 @@ namespace SQSExplorer
             this.listBoxQueues.ItemHeight = 15;
             this.listBoxQueues.Location = new System.Drawing.Point(24, 92);
             this.listBoxQueues.Name = "listBoxQueues";
-            this.listBoxQueues.Size = new System.Drawing.Size(329, 424);
+            this.listBoxQueues.Size = new System.Drawing.Size(404, 424);
             this.listBoxQueues.TabIndex = 2;
             // 
             // btRefreshQueues
@@ -67,7 +67,7 @@ namespace SQSExplorer
             this.btRefreshQueues.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btRefreshQueues.Location = new System.Drawing.Point(24, 522);
             this.btRefreshQueues.Name = "btRefreshQueues";
-            this.btRefreshQueues.Size = new System.Drawing.Size(126, 23);
+            this.btRefreshQueues.Size = new System.Drawing.Size(104, 23);
             this.btRefreshQueues.TabIndex = 3;
             this.btRefreshQueues.Text = "Refresh Queues";
             this.btRefreshQueues.UseVisualStyleBackColor = true;
@@ -97,20 +97,20 @@ namespace SQSExplorer
             // btSendMessageSelectedQueue
             // 
             this.btSendMessageSelectedQueue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btSendMessageSelectedQueue.Location = new System.Drawing.Point(191, 522);
+            this.btSendMessageSelectedQueue.Location = new System.Drawing.Point(656, 522);
             this.btSendMessageSelectedQueue.Name = "btSendMessageSelectedQueue";
-            this.btSendMessageSelectedQueue.Size = new System.Drawing.Size(160, 23);
+            this.btSendMessageSelectedQueue.Size = new System.Drawing.Size(245, 23);
             this.btSendMessageSelectedQueue.TabIndex = 6;
-            this.btSendMessageSelectedQueue.Text = "Send Message in Queue Selected";
+            this.btSendMessageSelectedQueue.Text = "Click for send Message in Queue Selected";
             this.btSendMessageSelectedQueue.UseVisualStyleBackColor = true;
             this.btSendMessageSelectedQueue.Click += new System.EventHandler(this.btSendMessageSelectedQueue_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.textBoxEspecificacoesQueue);
-            this.groupBox1.Location = new System.Drawing.Point(395, 92);
+            this.groupBox1.Location = new System.Drawing.Point(469, 92);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(384, 422);
+            this.groupBox1.Size = new System.Drawing.Size(463, 422);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Queue detail";
@@ -123,14 +123,14 @@ namespace SQSExplorer
             this.textBoxEspecificacoesQueue.Location = new System.Drawing.Point(29, 37);
             this.textBoxEspecificacoesQueue.Multiline = true;
             this.textBoxEspecificacoesQueue.Name = "textBoxEspecificacoesQueue";
-            this.textBoxEspecificacoesQueue.Size = new System.Drawing.Size(329, 355);
+            this.textBoxEspecificacoesQueue.Size = new System.Drawing.Size(403, 355);
             this.textBoxEspecificacoesQueue.TabIndex = 2;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 561);
+            this.ClientSize = new System.Drawing.Size(958, 561);
             this.Controls.Add(this.btSendMessageSelectedQueue);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
