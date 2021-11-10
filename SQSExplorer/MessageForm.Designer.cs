@@ -39,6 +39,7 @@ namespace SQSExplorer
             this.lblQueueSelected = new System.Windows.Forms.Label();
             this.lblReceivedLastMessageId = new System.Windows.Forms.Label();
             this.btDeleteLastMessage = new System.Windows.Forms.Button();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -129,7 +130,7 @@ namespace SQSExplorer
             // btDeleteLastMessage
             // 
             this.btDeleteLastMessage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btDeleteLastMessage.Location = new System.Drawing.Point(789, 522);
+            this.btDeleteLastMessage.Location = new System.Drawing.Point(321, 522);
             this.btDeleteLastMessage.Name = "btDeleteLastMessage";
             this.btDeleteLastMessage.Size = new System.Drawing.Size(127, 23);
             this.btDeleteLastMessage.TabIndex = 10;
@@ -137,11 +138,23 @@ namespace SQSExplorer
             this.btDeleteLastMessage.UseVisualStyleBackColor = true;
             this.btDeleteLastMessage.Click += new System.EventHandler(this.btDeleteLastMessage_Click);
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(549, 522);
+            this.progressBar1.MarqueeAnimationSpeed = 20;
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(337, 23);
+            this.progressBar1.Step = 100;
+            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.progressBar1.TabIndex = 11;
+            this.progressBar1.Visible = false;
+            // 
             // MessageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(958, 561);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.btDeleteLastMessage);
             this.Controls.Add(this.lblReceivedLastMessageId);
             this.Controls.Add(this.lblQueueSelected);
@@ -172,6 +185,7 @@ namespace SQSExplorer
         private System.Windows.Forms.Label lblQueueSelected;
         private System.Windows.Forms.Label lblReceivedLastMessageId;
         private System.Windows.Forms.Button btDeleteLastMessage;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
 
